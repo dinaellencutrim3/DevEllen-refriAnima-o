@@ -1,0 +1,158 @@
+.item {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: var(--background);
+}
+
+.item.active {
+    display: block;
+}
+
+.item .title {
+    font-size: 12rem;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    z-index: 3;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.item .fruit {
+    width: clamp(120%, 140vw, 180%);
+    max-width: 1400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+
+.item .refri {
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+#prev,
+#next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #eee9;
+    border: 1px solid #eee9;
+    color: #eee;
+    font-size: x-large;
+    font-family: monospace;
+    cursor: pointer;
+    z-index: 5;
+    border-radius: 50%;
+}
+
+#prev {
+    left: 20px;
+}
+
+#next {
+    right: 20px;
+}
+
+#prev:hover,
+#next:hover {
+    background-color: #fff2;
+    border: 1px solid #fff2;
+}
+
+@keyframes subir {
+    from {
+        transform: translate(-50%, 50%) scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+
+.item.active img.fruit {
+    animation: subir 0.6s ease-in-out 1;
+}
+
+
+.item.active .title {
+    animation: subir 0.6s ease-out;
+}
+
+.item.active img.refri {
+    animation: subir 0.8s cubic-bezier(.25, .8, .25, 1);
+}
+
+/* ===== NOTEBOOK (telas médias) ===== */
+@media (max-width: 1024px) {
+
+    .item .title {
+        font-size: 8rem;
+    }
+
+    .item .refri {
+        width: 480px;
+    }
+
+    .item .fruit {
+        width: clamp(140%, 160vw, 200%);
+    }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    .item .title {
+        font-size: 4.5rem;
+    }
+
+    .item .refri {
+        width: 75%;
+    }
+
+    .item .fruit {
+        width: clamp(180%, 220vw, 260%);
+    }
+
+    #prev,
+    #next {
+        width: 40px;
+        height: 40px;
+        font-size: large;
+    }
+}
+
+/* ===== MOBILE PEQUENO ===== */
+@media (max-width: 480px) {
+
+    .item .title {
+        font-size: 3rem;
+    }
+
+    .item .fruit {
+        width: 300%;
+    }
+}
