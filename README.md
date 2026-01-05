@@ -1,6 +1,6 @@
 🥤 DevEllen Refri – Landing Page Animada
 
-🔗 Link do projeto: adicione aqui
+🔗 Link do projeto:  https://dinaellencutrim3.github.io/DevEllen-refriAnima-o/
 
 Este projeto é uma landing page animada de refrigerantes, desenvolvida com foco em design moderno, animações suaves e responsividade, simulando uma vitrine de produto para web.
 
